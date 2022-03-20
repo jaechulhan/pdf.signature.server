@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+    <TITLE>$data.title</TITLE>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</HEAD>
+
+<BODY>
+    <center>
+        <font size="3" color="red">
+            <B>$data.productList.size() Products on Sale!</B>
+        </font>
+        <BR/> #set( $count = 1 )
+        <table style="width:100%">
+            <tr>
+                <th>Count</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            #foreach( $product in $data.productList )
+                <tr>
+                    <TD># $count</TD>
+                    <TD>$product.name</TD>
+                    <TD>$product.price</TD>
+                </tr>
+                #set( $count = $count + 1 ) #end
+        </table>
+    </center>
+</BODY>
+
+</HTML>
